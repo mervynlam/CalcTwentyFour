@@ -16,6 +16,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *
+ */
 public class MainActivity extends AppCompatActivity implements View.OnFocusChangeListener {
 
 	private EditText operandEdit1;
@@ -64,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 			@Override
 			public void onClick(View view) {
 				lostFocus();
+				//判断edittext是否为空，空则清空结果且提示
 				if (!checkNull()) {
 					resultList.clear();
 					adapter.notifyDataSetChanged();
@@ -74,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 					num[1] = getNum(operandEdit2.getText().toString().trim());
 					num[2] = getNum(operandEdit3.getText().toString().trim());
 					num[3] = getNum(operandEdit4.getText().toString().trim());
+					//获取4个数后计算
 					Calc.Calculate(num, resultList);
 					if (resultList.size() == 0) {
 						resultList.add("No solution");
@@ -133,6 +138,7 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 			return Integer.parseInt(s);
 	}
 
+	//edittext失去焦点后将不规范数字调整
 	public void onFocusChange(View view, boolean b) {
 		EditText editText = (EditText) view;
 		String nowText = editText.getText().toString().trim();

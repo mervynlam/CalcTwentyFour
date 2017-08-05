@@ -8,6 +8,7 @@ import static java.util.Arrays.sort;
  * Created by Mervynlam on 2017/8/4.
  */
 
+//求全排列
 public class Permutation {
 
 	private static ArrayList<int[]> permutationList = new ArrayList<int[]>();

@@ -58,16 +58,27 @@ public class Calc {
 				if (Math.abs(r-24) < EPS) {
 					String s;
 					if (cmpOp(op[0], op[1]) == 0 && cmpOp(op[0], op[2]) == -1)
-						s = "(" + formatNumIntoAlpha(num[0]) + ops[op[0]] + formatNumIntoAlpha(num[1]) + ops[op[1]] + formatNumIntoAlpha(num[2]) + ")" + ops[op[2]] + formatNumIntoAlpha(num[3]);
+						s = "(" + formatNumIntoAlpha(num[0]) + formatOperator(ops[op[0]]) + formatNumIntoAlpha(num[1]) + formatOperator(ops[op[1]]) + formatNumIntoAlpha(num[2]) + ")" + formatOperator(ops[op[2]]) + formatNumIntoAlpha(num[3]);
 					else if (cmpOp(op[0], op[1]) == -1)
-						s = "(" + formatNumIntoAlpha(num[0]) + ops[op[0]] + formatNumIntoAlpha(num[1]) + ")" + ops[op[1]] + formatNumIntoAlpha(num[2]) + ops[op[2]] + formatNumIntoAlpha(num[3]);
+						s = "(" + formatNumIntoAlpha(num[0]) + formatOperator(ops[op[0]]) + formatNumIntoAlpha(num[1]) + ")" + formatOperator(ops[op[1]]) + formatNumIntoAlpha(num[2]) + formatOperator(ops[op[2]]) + formatNumIntoAlpha(num[3]);
 					else if (cmpOp(op[0], op[2]) == 0 && cmpOp(op[0], op[1]) == 1)
-						s = "(" + formatNumIntoAlpha(num[0]) + ops[op[0]] + formatNumIntoAlpha(num[1]) + ops[op[1]] + formatNumIntoAlpha(num[2]) + ")" + ops[op[2]] + formatNumIntoAlpha(num[3]);
+						s = "(" + formatNumIntoAlpha(num[0]) + formatOperator(ops[op[0]]) + formatNumIntoAlpha(num[1]) + formatOperator(ops[op[1]]) + formatNumIntoAlpha(num[2]) + ")" + formatOperator(ops[op[2]]) + formatNumIntoAlpha(num[3]);
 					else
-						s = "" + formatNumIntoAlpha(num[0]) + ops[op[0]] + formatNumIntoAlpha(num[1]) + ops[op[1]] + formatNumIntoAlpha(num[2]) + ops[op[2]] + formatNumIntoAlpha(num[3]);
+						s = "" + formatNumIntoAlpha(num[0]) + formatOperator(ops[op[0]]) + formatNumIntoAlpha(num[1]) + formatOperator(ops[op[1]]) + formatNumIntoAlpha(num[2]) + formatOperator(ops[op[2]]) + formatNumIntoAlpha(num[3]);
 					result.add(s);
 				}
 			}
+		}
+	}
+
+	private static String formatOperator(char op) {
+		switch (op) {
+			case '*':
+				return "×";
+			case '/':
+				return "÷";
+			default:
+				return Character.toString(op);
 		}
 	}
 
