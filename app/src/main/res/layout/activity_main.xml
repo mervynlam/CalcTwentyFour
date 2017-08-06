@@ -80,7 +80,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         app:layout_anchor="@id/appBar"
-        app:layout_anchorGravity="bottom|end"/>
+        app:layout_anchorGravity="bottom|end"
+        android:src="@drawable/ic_done_white_24dp"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
