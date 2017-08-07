@@ -8,7 +8,6 @@ import static java.util.Arrays.sort;
  * Created by Mervynlam on 2017/8/4.
  */
 
-//求全排列
 public class Permutation {
 
 	private static ArrayList<int[]> permutationList = new ArrayList<int[]>();
@@ -20,6 +19,12 @@ public class Permutation {
 		return permutationList;
 	}
 
+	/*
+	* if i in [a,b) exist num[i] == num[b], don't swap.
+	* judge for avoiding repeat
+	* @param
+	* @return
+	*/
 	private static boolean isSwap(int[] num, int a, int b) {
 		for (int i = a; i < b; ++i) {
 			if (num[i] == num[b])

@@ -3,11 +3,12 @@
       xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/about"
-        android:title="About"
+        android:title="@string/menu_about"
         app:showAsAction="never"/>
+
     <item
         android:id="@+id/clear"
-        android:title="Clear"
+        android:title="@string/menu_clear"
         app:showAsAction="ifRoom"
         android:icon="@drawable/ic_delete_white_24dp"/>
 

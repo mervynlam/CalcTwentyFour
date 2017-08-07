@@ -16,9 +16,6 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- */
 public class MainActivity extends AppCompatActivity implements View.OnFocusChangeListener {
 
 	private EditText operandEdit1;
@@ -138,7 +135,11 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 			return Integer.parseInt(s);
 	}
 
-	//edittext失去焦点后将不规范数字调整
+	/*
+	* 失去焦点后将不规范数字调整
+	* @param
+	* @return
+	*/
 	public void onFocusChange(View view, boolean b) {
 		EditText editText = (EditText) view;
 		String nowText = editText.getText().toString().trim();

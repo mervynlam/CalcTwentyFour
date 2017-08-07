@@ -12,6 +12,12 @@ public class Calc {
 	private static ArrayList<int[]> permutationList = new ArrayList<>();
 	private static final float EPS = 1e-4f;
 
+	/*
+	* Calculate 24 point
+	* @param num operand
+	* @param result data source of adapter
+	* @return
+	*/
 	public static void Calculate(int[] num, List<String> result) {
 		if (result == null)
 			result = new ArrayList<>();
@@ -22,6 +28,11 @@ public class Calc {
 		Calc(permutationList, result);
 	}
 
+	/*
+	* Compare the priority of two operator
+	* @param
+	* @return -1 <, 0 =, 1 >
+	*/
 	private static int cmpOp(int a, int b) {
 		if ((a == 0 || a == 1) && (b == 2 || b == 3))
 			return -1;
@@ -30,6 +41,11 @@ public class Calc {
 		return 0;
 	}
 
+	/*
+	* process of calculating
+	* @param permutationList the full permutation of operand without repeat (like 122, 212, 211)
+	* @return
+	*/
 	private static void Calc(ArrayList<int[]> permutationList, List<String> result) {
 		char[] ops = new char[] {'+','-','*','/'};
 
@@ -71,6 +87,11 @@ public class Calc {
 		}
 	}
 
+	/*
+	* format output
+	* @param
+	* @return
+	*/
 	private static String formatOperator(char op) {
 		switch (op) {
 			case '*':
