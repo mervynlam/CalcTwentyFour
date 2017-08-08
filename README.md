@@ -2,11 +2,11 @@
 
 # Calc24
 
-##### Description
+### Description
 
 A calculator for 24 point.
 
-##### Licensed
+### Licensed
 
 > Copyright 2017 MervynLam
 >

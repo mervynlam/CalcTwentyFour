@@ -50,7 +50,7 @@ public class Calc {
 		char[] ops = new char[] {'+','-','*','/'};
 
 		for (int[] num : permutationList) {
-			char[] op = new char[3];
+			int[] op = new int[3];
 			for (op[0] = 0; op[0] < 4; op[0]++)
 			for (op[1] = 0; op[1] < 4; op[1]++)
 			for (op[2] = 0; op[2] < 4; op[2]++){

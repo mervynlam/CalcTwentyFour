@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
 			case R.id.about:
-				Toast.makeText(this, "about is waiting for developing", Toast.LENGTH_SHORT).show();
+				(new AboutDialog()).show(getFragmentManager(), "aboutDialog");
 				break;
 			case R.id.clear:
 				clearAll();
