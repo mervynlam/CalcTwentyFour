@@ -1,14 +1,14 @@
 <resources>
-    <string name="app_name">Calc24</string>
+    <string name="app_name">计算24点</string>
 
     <string name="menu_about">关于</string>
     <string name="menu_clear">清除</string>
 
     <string name="dlg_about_title">关于</string>
-    <string name="dlg_about_positive">OK</string>
+    <string name="dlg_about_positive">好的</string>
     <string name="about_details">
-        Calc24 - version: %1$s
-        \nDeveloper: MervynLam</string>
+        计算24点 - 版本: %1$s
+        \n开发者: MervynLam</string>
 
     <string name="back_to_finish">再按一次退出程序</string>
     <string name="illegal_num">非法数字</string>

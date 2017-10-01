@@ -7,20 +7,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnFocusChangeListener, TextView.OnEditorActionListener {
+public class MainActivity extends AppCompatActivity implements View.OnFocusChangeListener {
 
 	private EditText operandEdit1;
 	private EditText operandEdit2;
@@ -63,10 +61,6 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 		operandEdit2.setOnFocusChangeListener(this);
 		operandEdit3.setOnFocusChangeListener(this);
 		operandEdit4.setOnFocusChangeListener(this);
-		operandEdit1.setOnEditorActionListener(this);
-		operandEdit2.setOnEditorActionListener(this);
-		operandEdit3.setOnEditorActionListener(this);
-		operandEdit4.setOnEditorActionListener(this);
 
 		fab.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -91,6 +85,7 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 					adapter.notifyDataSetChanged();
 				}
 				getFocus();
+				//隐藏键盘
 				InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
 				imm.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 			}
@@ -210,11 +205,5 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 				break;
 		}
 		return super.onKeyUp(keyCode, event);
-	}
-
-	@Override
-	public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
-		Log.e("多行监听", actionId + "\t" + KeyEvent.KEYCODE_ENTER);
-		return keyEvent != null && (keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER);
 	}
 }
