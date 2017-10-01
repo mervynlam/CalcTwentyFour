@@ -13,12 +13,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnFocusChangeListener {
+public class MainActivity extends AppCompatActivity implements View.OnFocusChangeListener, TextView.OnEditorActionListener {
 
 	private EditText operandEdit1;
 	private EditText operandEdit2;
@@ -61,6 +62,10 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 		operandEdit2.setOnFocusChangeListener(this);
 		operandEdit3.setOnFocusChangeListener(this);
 		operandEdit4.setOnFocusChangeListener(this);
+		operandEdit1.setOnEditorActionListener(this);
+		operandEdit2.setOnEditorActionListener(this);
+		operandEdit3.setOnEditorActionListener(this);
+		operandEdit4.setOnEditorActionListener(this);
 
 		fab.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -141,10 +146,11 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 	}
 
 	/**
-	* this listener use for adjusting the digital which lacks of standardization after losing focus
-	* @param
-	* @return
-	*/
+	 * this listener use for adjusting the digital which lacks of standardization after losing focus
+	 *
+	 * @param
+	 * @return
+	 */
 	public void onFocusChange(View view, boolean b) {
 		EditText editText = (EditText) view;
 		String nowText = editText.getText().toString().trim();
@@ -205,5 +211,10 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 				break;
 		}
 		return super.onKeyUp(keyCode, event);
+	}
+
+	@Override
+	public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+		return keyEvent != null && (keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER);
 	}
 }
