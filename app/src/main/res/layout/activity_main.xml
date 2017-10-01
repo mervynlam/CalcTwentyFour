@@ -31,7 +31,9 @@
                 android:layout_width="60dp"
                 android:layout_height="80dp"
                 android:background="@drawable/rounded_edittext"
+                android:inputType="number"
                 android:maxLength="2"
+                android:maxLines="1"
                 android:textAlignment="center"
                 android:textColor="#9b9a95"
                 android:textSize="40dp"/>
@@ -42,7 +44,9 @@
                 android:layout_height="80dp"
                 android:layout_marginLeft="25dp"
                 android:background="@drawable/rounded_edittext"
+                android:inputType="number"
                 android:maxLength="2"
+                android:maxLines="1"
                 android:textAlignment="center"
                 android:textColor="#9b9a95"
                 android:textSize="40dp"/>
@@ -53,7 +57,9 @@
                 android:layout_height="80dp"
                 android:layout_marginLeft="25dp"
                 android:background="@drawable/rounded_edittext"
+                android:inputType="number"
                 android:maxLength="2"
+                android:maxLines="1"
                 android:textAlignment="center"
                 android:textColor="#9b9a95"
                 android:textSize="40dp"/>
@@ -64,7 +70,9 @@
                 android:layout_height="80dp"
                 android:layout_marginLeft="25dp"
                 android:background="@drawable/rounded_edittext"
+                android:inputType="number"
                 android:maxLength="2"
+                android:maxLines="1"
                 android:textAlignment="center"
                 android:textColor="#9b9a95"
                 android:textSize="40dp"/>
@@ -79,9 +87,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:src="@drawable/ic_done_white_24dp"
         app:layout_anchor="@id/appBar"
-        app:layout_anchorGravity="bottom|end"
-        android:src="@drawable/ic_done_white_24dp"/>
+        app:layout_anchorGravity="bottom|end"/>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/recycler_view"
