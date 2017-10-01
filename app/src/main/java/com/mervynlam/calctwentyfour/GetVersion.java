@@ -5,6 +5,7 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
 /**
+ * used for getting version code of app
  * Created by Mervynlam on 2017/8/7.
  */
 

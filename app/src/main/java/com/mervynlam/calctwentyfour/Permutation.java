@@ -19,10 +19,11 @@ public class Permutation {
 		return permutationList;
 	}
 
-	/*
-	* if i in [a,b) exist num[i] == num[b], don't swap.
-	* judge for avoiding repeat
-	* @param
+	/**
+	* if i in [a,b) exist num[i] == num[b], don't swap, for avoiding repeat
+	* @param num the array that needs to be swapped
+	* @param a floor of the range
+	* @param num ceiling of the range
 	* @return
 	*/
 	private static boolean isSwap(int[] num, int a, int b) {

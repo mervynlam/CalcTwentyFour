@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 				if (!checkNull()) {
 					resultList.clear();
 					adapter.notifyDataSetChanged();
-					Toast.makeText(MainActivity.this, "请填数", Toast.LENGTH_SHORT).show();
+					Toast.makeText(MainActivity.this, getResources().getString(R.string.please_fill_blank), Toast.LENGTH_SHORT).show();
 				} else {
 					int[] num = new int[4];
 					num[0] = getNum(operandEdit1.getText().toString().trim());
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 					num[2] = getNum(operandEdit3.getText().toString().trim());
 					num[3] = getNum(operandEdit4.getText().toString().trim());
 					//获取4个数后计算
-					Calc.Calculate(num, resultList);
+					Calculator.Calculate(num, resultList);
 					if (resultList.size() == 0) {
 						resultList.add("No solution");
 					}
@@ -135,8 +135,8 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 			return Integer.parseInt(s);
 	}
 
-	/*
-	* 失去焦点后将不规范数字调整
+	/**
+	* this listener use for adjusting the digital which lacks of standardization after losing focus
 	* @param
 	* @return
 	*/
@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 					nowText.equals("7") || nowText.equals("8") || nowText.equals("9") || nowText.equals("10")) {
 			} else {
 				clearOne(editText);
-				Toast.makeText(MainActivity.this, "非法数字", Toast.LENGTH_SHORT).show();
+				Toast.makeText(MainActivity.this, getResources().getString(R.string.illegal_num), Toast.LENGTH_SHORT).show();
 			}
 		}
 	}
@@ -191,7 +191,7 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 			case KeyEvent.KEYCODE_BACK:
 				long secondTime = System.currentTimeMillis();
 				if (secondTime - firstTime > 2000) {
-					Toast.makeText(MainActivity.this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+					Toast.makeText(MainActivity.this, getResources().getString(R.string.back_to_finish), Toast.LENGTH_SHORT).show();
 					firstTime = secondTime;
 					return true;
 				} else {

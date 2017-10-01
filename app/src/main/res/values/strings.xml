@@ -1,12 +1,16 @@
 <resources>
     <string name="app_name">Calc24</string>
 
-    <string name="menu_about">About</string>
-    <string name="menu_clear">Clear</string>
+    <string name="menu_about">关于</string>
+    <string name="menu_clear">清除</string>
 
-    <string name="dlg_about_title">About</string>
+    <string name="dlg_about_title">关于</string>
     <string name="dlg_about_positive">OK</string>
     <string name="about_details">
         Calc24 - version: %1$s
         \nDeveloper: MervynLam</string>
+
+    <string name="back_to_finish">再按一次退出程序</string>
+    <string name="illegal_num">非法数字</string>
+    <string name="please_fill_blank">请填数</string>
 </resources>
