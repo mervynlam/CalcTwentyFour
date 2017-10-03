@@ -7,7 +7,8 @@
     <string name="dlg_about_title">关于</string>
     <string name="dlg_about_positive">好的</string>
     <string name="about_details">
-        计算24点 - 版本: %1$s
+        计算24点
+        \n版本: %1$s
         \n开发者: MervynLam</string>
 
     <string name="back_to_finish">再按一次退出程序</string>

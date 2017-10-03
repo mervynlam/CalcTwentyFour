@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 					resultList.clear();
 					adapter.notifyDataSetChanged();
 					Toast.makeText(MainActivity.this, getResources().getString(R.string.please_fill_blank), Toast.LENGTH_SHORT).show();
+					getFocusAndShowSoftInput(operandEdit1);
 				} else {
 					int[] num = new int[4];
 					num[0] = getNum(operandEdit1.getText().toString().trim());
