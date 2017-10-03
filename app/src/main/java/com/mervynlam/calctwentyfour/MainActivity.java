@@ -70,6 +70,9 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 		fab.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				//隐藏键盘
+				InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+				imm.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 				lostFocus();
 				//判断edittext是否为空，空则清空结果且提示
 				if (!checkNull()) {
@@ -90,9 +93,6 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 					adapter.notifyDataSetChanged();
 				}
 				getFocus();
-				//隐藏键盘
-				InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-				imm.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
 			}
 		});
 	}
@@ -215,6 +215,11 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 
 	@Override
 	public boolean onEditorAction(TextView textView, int actionId, KeyEvent keyEvent) {
+		switch (textView.getId()) {
+			case R.id.operand4:
+				fab.performClick();
+				break;
+		}
 		return keyEvent != null && (keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER);
 	}
 }
