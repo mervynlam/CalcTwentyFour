@@ -189,11 +189,24 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
 				clearAll();
 				resultList.clear();
 				adapter.notifyDataSetChanged();
+				getFocusAndShowSoftInput(operandEdit1);
 				break;
 			default:
 				break;
 		}
 		return true;
+	}
+	/**
+	* used for getting focus and show soft input
+	* @param  view the view that needs to get focus
+	* @return
+	*/
+	private void getFocusAndShowSoftInput(View view) {
+		view.setFocusable(true);
+		view.setFocusableInTouchMode(true);
+		view.requestFocus();
+		InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+		imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
 	}
 
 	@Override
